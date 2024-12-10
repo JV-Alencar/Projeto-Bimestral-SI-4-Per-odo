@@ -27,7 +27,7 @@ class ItemController extends Controller
         ]);
 
         Item::create($validated);
-        return redirect()->route('items.index')->with('success', 'Item adicionado com sucesso!');
+        return redirect()->route('index')->with('success', 'Item adicionado com sucesso!');
     }
 
     public function edit(Item $item)
@@ -44,13 +44,13 @@ class ItemController extends Controller
         ]);
 
         $item->update($validated);
-        return redirect()->route('items.index')->with('success', 'Item atualizado com sucesso!');
+        return redirect()->route('index')->with('success', 'Item atualizado com sucesso!');
     }
 
     public function destroy(Item $item)
     {
         $item->delete();
-        return redirect()->route('items.index')->with('success', 'Item removido com sucesso!');
+        return redirect()->route('index')->with('success', 'Item removido com sucesso!');
     }
 }
 

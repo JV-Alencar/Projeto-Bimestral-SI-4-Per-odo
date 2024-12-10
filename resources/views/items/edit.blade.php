@@ -1,16 +1,14 @@
-@extends('layout')
-
-@section('content')
+<link rel="stylesheet" href="{{ asset('app.css') }}">
+<nav>
+    <a href="{{ route('index') }}"><Button>Home</Button></a>
+</nav>
 <h1>Editar Item</h1>
 <form action="{{ route('items.update', $item) }}" method="POST">
     @csrf
     @method('PUT')
-    <label for="name">Nome:</label>
+    <label class="txt" for="name">Nome:</label>
     <input type="text" name="name" id="name" value="{{ $item->name }}" required>
-    <label for="quantity">Quantidade:</label>
+    <label class="txt" for="quantity">Quantidade:</label>
     <input type="number" name="quantity" id="quantity" value="{{ $item->quantity }}" required>
-    <label for="description">Descrição:</label>
-    <textarea name="description" id="description">{{ $item->description }}</textarea>
     <button type="submit">Salvar</button>
 </form>
-@endsection

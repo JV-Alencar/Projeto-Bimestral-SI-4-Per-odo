@@ -1,15 +1,16 @@
 @extends('layout')
 
 @section('content')
+<nav>
+    <a href="{{ route('index') }}"><Button>Home</Button></a>
+</nav>
 <h1>Adicionar Item</h1>
 <form action="{{ route('items.store') }}" method="POST">
     @csrf
-    <label for="name">Nome:</label>
+    <label class= "txt" for="name">Nome:</label>
     <input type="text" name="name" id="name" required>
-    <label for="quantity">Quantidade:</label>
+    <label class= "txt" for="quantity">Quantidade:</label>
     <input type="number" name="quantity" id="quantity" required>
-    <label for="description">Descrição:</label>
-    <textarea name="description" id="description"></textarea>
     <button type="submit">Salvar</button>
 </form>
 @endsection

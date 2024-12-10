@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('name'); // Nome do item
             $table->integer('quantity'); // Quantidade
-            $table->text('description')->nullable(); // Descrição opcional
             $table->timestamps();
         });
     }
